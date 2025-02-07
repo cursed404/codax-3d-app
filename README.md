@@ -1,46 +1,31 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+The Task.
+Create a simple client-server web app that includes a 3D box in a Three.js scene and a
+form to set the box parameters (refer to the image for an example).
+The application should satisfy the following:
+1. Everything should be written in Typescript.
+2. The frontend part should be written using React and Three.js (it's okay to use
+wrappers such as react-three-ber)
+3. The user should be able to change the box's length, width, and height via the
+form.
+4. The form should be built using components from a third-party component library
+(Ant Design, Material UI, Radix, React Aria, etc.)
+5. Form elds should be customized using CSS (including non-default states such
+as "focus").
+6. The form should send the parameters to the server and get back data for the
+display of the box.
+7. The box should be displayed using BufferGeometry. Triangulation of the box (i.e.
+a set of triangles to be used for display) must be computed on a server (see
+below for a tip on how to implement that)
+Tip 1: How to compute triangulation of the box
+To implement a 3D object in 3D view you will need
+triangulated representation (i.e. a 3D object is represented in
+the form of triangles). A box can be easily represented with
+12 triangles (2 per each face – see image on the right).
+Coordinates of vertices of these triangles can be easily
+calculated using box length, width and height (e.g. {0,0,0},
+{L,0,0}, {L,0,H}, …).
+Tip 2: Backend.
+For this task, a cloud function should be enough, but you are free to implement a full
+server.
+Additional assignment (this will help you stand out).
+● Implement a dark mode switch that affects both the 3D-scene and form section.
