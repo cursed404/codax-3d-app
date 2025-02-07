@@ -1,0 +1,14 @@
+.box-form {
+    max-width: 300px;
+    margin: 20px;
+  }
+  
+  .box-form .ant-input {
+    background-color: #f0f0f0;
+    border: 1px solid #d9d9d9;
+  }
+  
+  .box-form .ant-input:focus {
+    border-color: #40a9ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  }
